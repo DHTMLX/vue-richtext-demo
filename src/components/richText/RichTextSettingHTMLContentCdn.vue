@@ -6,21 +6,7 @@
     <div class="dhx-container_setting">
       <div class="dhx_sample-container__widget setting" ref="richtext"></div>
       <div class="dhx_sample-container__sidebar setting">
-        <textarea id="content-to-parse" placeholder="Paste here HTML" class="dhx_textarea">
-        <h1>Meet DHTMLX Rich Text Editor!</h1>
-        <p>This JavaScript rich text editor is highly customizable. It makes text editing quick and comfortable due to the inbuilt set of handy formatting tools.</p>
-        <p>
-          Besides, it will convert your text into HTML or Markdown in the blink of an eye.
-          Another bonus of DHTMLX Rich Text is its flexible configuration settings which allow you to fine-tune the look and feel of the editor without effort.
-        </p>
-        <p>
-          To learn more, read our
-          <a href="https://docs.dhtmlx.com/richtext/index.html" title="documentation">documentation</a>
-          and check the
-          <a href="https://docs.dhtmlx.com/richtext/samples/" title="samples">samples</a>.
-        </p>
-      </textarea
-        >
+        <textarea class="dhx_textarea" v-model="content"></textarea>
       </div>
     </div>
   </div>
@@ -32,6 +18,20 @@ export default {
   name: "RichTextSettingHTMLContentCdn",
   data: () => ({
     richtext: null,
+    content: `
+      <h1>Meet DHTMLX Rich Text Editor!</h1>
+      <p>This JavaScript rich text editor is highly customizable. It makes text editing quick and comfortable due to the inbuilt set of handy formatting tools.</p>
+      <p>
+        Besides, it will convert your text into HTML or Markdown in the blink of an eye.
+        Another bonus of DHTMLX Rich Text is its flexible configuration settings which allow you to fine-tune the look and feel of the editor without effort.
+      </p>
+      <p>
+        To learn more, read our
+        <a href="https://docs.dhtmlx.com/richtext/index.html" title="documentation">documentation</a>
+        and check the
+        <a href="https://docs.dhtmlx.com/richtext/samples/" title="samples">samples</a>.
+      </p>
+    `
   }),
   mounted() {
     fromCDN(["https://cdn.dhtmlx.com/richtext/pro/edge/richtext.js", "https://cdn.dhtmlx.com/richtext/pro/edge/richtext.css"]).then(() => {
@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     handleSetValue() {
-      let contentToParse = document.getElementById("content-to-parse").value;
+      let contentToParse = this.content;
       contentToParse && this.richtext.setValue(contentToParse, "html");
     },
   },

@@ -135,7 +135,7 @@ export const gettingContent = () => ({
   `,
 });
 
-export const textEditormodes = () => ({
+export const textEditorModes = () => ({
   components: { RichTextEditormodesCdn },
   template: `
     <section class="dhx-container">

@@ -1,7 +1,7 @@
 <template>
   <div class="dhx-container_inner">
     <section class="dhx_sample-controls">
-      <form class="dhx_sample-toolbar-blocks" id="toolbar-blocks">
+      <form class="dhx_sample-toolbar-blocks" @change="eventHandler">
         <label class="dhx_form-group dhx_checkbox dhx_checkbox--inline">
           <input type="checkbox" id="undo" checked class="dhx_checkbox__input" />
           <span class="dhx_checkbox__visual-input"></span>
@@ -74,13 +74,16 @@ export default {
       // eslint-disable-next-line no-undef
       this.richtext = new dhx.Richtext(this.$refs.richtext);
       this.richtext.setValue(this.initialValue, "html");
-      document.getElementById("toolbar-blocks").addEventListener("change", e => {
-        if (e.target.checked) {
-          this.toolbarBlocks.push(e.target.id);
+    });
+  },
+  methods: {
+    eventHandler(event) {
+      if (event.target.checked) {
+          this.toolbarBlocks.push(event.target.id);
         } else {
           let filtered = [];
           for (let i = 0; i < this.toolbarBlocks.length; i++) {
-            if (this.toolbarBlocks[i] !== e.target.id) {
+            if (this.toolbarBlocks[i] !== event.target.id) {
               filtered.push(this.toolbarBlocks[i]);
             }
           }
@@ -93,8 +96,7 @@ export default {
           toolbarBlocks: this.toolbarBlocks,
         });
         this.richtext.setValue(value, "html");
-      });
-    });
+    }
   },
   beforeDestroy() {
     if (this.richtext) {

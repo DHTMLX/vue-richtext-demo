@@ -2,15 +2,7 @@
   <div class="dhx-container_inner">
     <section class="dhx_sample-controls">
       <div class="dhx_sample-input__wrapper dhx_sample-input__wrapper--pl-16">
-        <input
-          checked
-          name="mode"
-          value="classic"
-          id="classic"
-          @change="handleChange('classic')"
-          type="radio"
-          class="dhx_sample-radio__input"
-        />
+        <input checked name="mode" value="classic" id="classic" @change="handleChange('classic')" type="radio" class="dhx_sample-radio__input" />
         <label for="classic" class="dhx_sample-radio__label">Classic mode</label>
       </div>
       <div class="dhx_sample-input__wrapper dhx_sample-input__wrapper--pl-16">

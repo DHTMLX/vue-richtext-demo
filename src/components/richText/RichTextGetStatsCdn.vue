@@ -7,9 +7,9 @@
       <div class="dhx_sample-container__widget setting" ref="richtext"></div>
       <div class="dhx_sample-container__sidebar setting">
         <ul>
-          <li>Characters: <span id="chars-amount"></span><br /></li>
-          <li>Characters without spaces: <span id="charsExlSpace-amount"></span><br /></li>
-          <li>Words: <span id="words-amount"></span></li>
+          <li>Characters: <span>{{charsAmount}}</span><br /></li>
+          <li>Characters without spaces: <span>{{charsExlSpaceAmount}}</span><br /></li>
+          <li>Words: <span>{{wordsAmount}}</span></li>
         </ul>
       </div>
     </div>
@@ -22,6 +22,9 @@ export default {
   name: "RichTextGetStatsCdn",
   data: () => ({
     pivot: null,
+    charsAmount: "",
+    charsExlSpaceAmount: "",
+    wordsAmount: ""
   }),
   mounted() {
     fromCDN(["https://cdn.dhtmlx.com/richtext/pro/edge/richtext.js", "https://cdn.dhtmlx.com/richtext/pro/edge/richtext.css"]).then(() => {
@@ -31,9 +34,9 @@ export default {
   },
   methods: {
     getStats() {
-      document.getElementById("chars-amount").innerText = this.richtext.getStats().chars;
-      document.getElementById("charsExlSpace-amount").innerText = this.richtext.getStats().charsExlSpace;
-      document.getElementById("words-amount").innerText = this.richtext.getStats().words;
+      this.charsAmount = this.richtext.getStats().chars;
+      this.charsExlSpaceAmount = this.richtext.getStats().charsExlSpace;
+      this.wordsAmount = this.richtext.getStats().words;
     },
   },
   beforeDestroy() {
