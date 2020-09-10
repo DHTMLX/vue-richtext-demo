@@ -15,7 +15,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -24,7 +23,7 @@ import fromCDN from "from-cdn";
 export default {
   name: "RichTextEventsCdn",
   data: () => ({
-    pivot: null,
+    richtext: null,
     isEmpty: true,
     eventsArray: ["change", "action", "selectionChange", "selectionRefresh"],
     events: [],
