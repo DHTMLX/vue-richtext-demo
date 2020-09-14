@@ -3,11 +3,9 @@
     <section class="dhx_sample-controls">
       <button class="dhx_sample-btn dhx_sample-btn--flat" @click="handleSetValue()">Set HTML Value</button>
     </section>
-    <div class="dhx-container_setting">
+    <div class="dhx_container">
       <div class="dhx_sample-container__widget setting" ref="richtext"></div>
-      <div class="dhx_sample-container__sidebar setting">
-        <textarea class="dhx_textarea" v-model="content"></textarea>
-      </div>
+      <textarea class="dhx_sample-container__textarea" v-model="content"></textarea>
     </div>
   </div>
 </template>
@@ -31,7 +29,7 @@ export default {
         and check the
         <a href="https://docs.dhtmlx.com/richtext/samples/" title="samples">samples</a>.
       </p>
-    `
+    `,
   }),
   mounted() {
     fromCDN(["https://cdn.dhtmlx.com/richtext/pro/edge/richtext.js", "https://cdn.dhtmlx.com/richtext/pro/edge/richtext.css"]).then(() => {

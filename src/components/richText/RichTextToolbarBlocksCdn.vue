@@ -79,24 +79,24 @@ export default {
   methods: {
     eventHandler(event) {
       if (event.target.checked) {
-          this.toolbarBlocks.push(event.target.id);
-        } else {
-          let filtered = [];
-          for (let i = 0; i < this.toolbarBlocks.length; i++) {
-            if (this.toolbarBlocks[i] !== event.target.id) {
-              filtered.push(this.toolbarBlocks[i]);
-            }
+        this.toolbarBlocks.push(event.target.id);
+      } else {
+        let filtered = [];
+        for (let i = 0; i < this.toolbarBlocks.length; i++) {
+          if (this.toolbarBlocks[i] !== event.target.id) {
+            filtered.push(this.toolbarBlocks[i]);
           }
-          this.toolbarBlocks = filtered;
         }
-        let value = this.richtext.getValue();
-        this.richtext.destructor();
-        // eslint-disable-next-line no-undef
-        this.richtext = new dhx.Richtext(this.$refs.richtext, {
-          toolbarBlocks: this.toolbarBlocks,
-        });
-        this.richtext.setValue(value, "html");
-    }
+        this.toolbarBlocks = filtered;
+      }
+      let value = this.richtext.getValue();
+      this.richtext.destructor();
+      // eslint-disable-next-line no-undef
+      this.richtext = new dhx.Richtext(this.$refs.richtext, {
+        toolbarBlocks: this.toolbarBlocks,
+      });
+      this.richtext.setValue(value, "html");
+    },
   },
   beforeDestroy() {
     if (this.richtext) {

@@ -3,12 +3,10 @@
     <section class="dhx_sample-controls">
       <button class="dhx_sample-btn dhx_sample-btn--flat" @click="clearAll()">Clear events</button>
     </section>
-    <div class="dhx-events">
+    <div class="dhx_container">
       <div class="dhx_sample-container__widget" ref="richtext"></div>
       <div class="dhx_sample-container__sidebar">
-        <div class="events-list--element" v-if="isEmpty">
-          No events yet
-        </div>
+        <div class="events-list--element" v-if="isEmpty">No events yet</div>
         <div class="events-list--element dhx_sample-event" v-else v-for="event in events" :key="event.keyId">
           <p>{{ event.name }}</p>
           <p>{{ event.value }}</p>

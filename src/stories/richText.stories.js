@@ -2,10 +2,12 @@ import RichTextInitCdn from "../components/richText/RichTextInitCdn";
 import RichTextEventsCdn from "../components/richText/RichTextEventsCdn";
 import RichTextSettingHTMLContentCdn from "../components/richText/RichTextSettingHTMLContentCdn";
 import RichTextGettingContentCdn from "../components/richText/RichTextGettingContentCdn";
-import RichTextEditormodesCdn from "../components/richText/RichTextEditormodesCdn";
+import RichTextEditorModesCdn from "../components/richText/RichTextEditorModesCdn";
 import RichTextToolbarBlocksCdn from "../components/richText/RichTextToolbarBlocksCdn";
 import RichTextLocalizationCdn from "../components/richText/RichTextLocalizationCdn";
 import RichTextGetStatsCdn from "../components/richText/RichTextGetStatsCdn";
+
+import "../index.css";
 
 export default {
   title: "RichText",
@@ -136,14 +138,14 @@ export const gettingContent = () => ({
 });
 
 export const textEditorModes = () => ({
-  components: { RichTextEditormodesCdn },
+  components: { RichTextEditorModesCdn: RichTextEditorModesCdn },
   template: `
     <section class="dhx-container">
       <div class="dhx-container_header">
         <h3>RichText Editor modes. </h3>
         <a
           class="source-link"
-          href="https://github.com/DHTMLX/vue-richText-demo/blob/master/src/components/richText/RichTextEditormodesCdn.vue"
+          href="https://github.com/DHTMLX/vue-richText-demo/blob/master/src/components/richText/RichTextEditorModesCdn.vue"
           target="_blank"
         >
           Source code
@@ -158,7 +160,7 @@ export const textEditorModes = () => ({
           </a>
         </div>
       </div>
-      <RichTextEditormodesCdn></RichTextEditormodesCdn>
+      <RichTextEditorModesCdn></RichTextEditorModesCdn>
     </section>
   `,
 });
