@@ -1,7 +1,20 @@
+/* specify styles for initial page */
 html,
 body,
 #root {
+  /* make sure that you use the #app root container */
   height: 100%;
   padding: 0;
   margin: 0;
+}
+
+/* specify styles for RichText container */
+.component_container {
+  height: 100%;
+  margin: 0 auto;
+}
+
+/* specify styles for RichText widget */
+.widget {
+  height: calc(100% - 56px);
 }
