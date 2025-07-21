@@ -1,17 +1,16 @@
 <script>
-import Richtext from "./components/Richtext.vue";
+import RichText from "./components/Richtext.vue";
 import { getData } from "./data";
 
 export default {
-  components: { Richtext },
+  components: { RichText },
   data() {
-    return {
-      initText: getData()
-    };
-  },
+    const { value } = getData();
+    return { value };
+  }
 };
 </script>
 
 <template>
-  <Richtext :initText="initText" />
+  <Richtext :value="value" />
 </template>
