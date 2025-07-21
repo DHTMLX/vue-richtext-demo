@@ -6,8 +6,11 @@ export default {
   props: ["value"],
 
   mounted() {
+    this.baseURL = "https://master--richtext-go--dev.webix.io";
     this.richtext = new Richtext(this.$refs.richtext_container, {
-      value: this.value
+      value: this.value,
+      menubar: true,
+      imageUploadUrl: `${baseURL}/images`
     });
   },
 
