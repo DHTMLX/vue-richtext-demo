@@ -8,7 +8,7 @@
     "deploy": "yarn build && gh-pages -d dist"
   },
   "dependencies": {
-    "@dhx/trial-richtext": "^1.2.0",
+    "@dhx/trial-richtext": "^2.0.0",
     "vue": "^3.2.37"
   },
   "devDependencies": {

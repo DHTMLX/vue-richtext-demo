@@ -7,10 +7,10 @@
   resolved "https://registry.npmjs.org/@babel/parser/-/parser-7.22.5.tgz"
   integrity sha512-DFZMC9LJUG9PLOclRC32G63UXwzqS2koQC8dkx+PLdmt1xSePYpbT/NbsrJy8Q/muXz7o/h/d4A7Fuyixm559Q==
 
-"@dhx/trial-richtext@^1.2.0":
-  version "1.2.0"
-  resolved "https://npm.dhtmlx.com/@dhx%2ftrial-richtext/-/trial-richtext-1.2.0.tgz#ba704f787adc761b1d01a8121c205990969c2bba"
-  integrity sha512-ObWdg+dHLVzrB2/dlCOnkG/4MhNmIs1yj2G5Z4cYiS/Jy30jQ8lOv+uAQ40N4Zjhvi8gMLM1BQbl5CNttsavNg==
+"@dhx/trial-richtext@^2.0.0":
+  version "2.0.0"
+  resolved "https://npm.dhtmlx.com/@dhx%2ftrial-richtext/-/trial-richtext-2.0.0.tgz#75ccf384a5f6c6aecab9e24647ba3e8a10837763"
+  integrity sha512-ZLuFRzZPvXb/KYCO/9yymP+62JL5ayRt26+JAZ11+/CVs9j5le21mbLnnRuFhgVq2YTTI6PDfPnq5p2cxOEJlw==
 
 "@esbuild/android-arm@0.15.18":
   version "0.15.18"
