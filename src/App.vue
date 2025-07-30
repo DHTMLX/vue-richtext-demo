@@ -12,5 +12,5 @@ export default {
 </script>
 
 <template>
-  <Richtext :value="value" />
+  <RichText :value="value" />
 </template>

@@ -1,26 +1,21 @@
 <script>
 import { Richtext } from "@dhx/trial-richtext";
-import "@dhx/trial-richtext/codebase/richtext.css";
+import "@dhx/trial-richtext/dist/richtext.css";
 
 export default {
   props: ["value"],
 
   mounted() {
-    this.baseURL = "https://master--richtext-go--dev.webix.io";
+    this.baseURL = "https://docs.dhtmlx.com/richtext-backend";
     this.richtext = new Richtext(this.$refs.richtext_container, {
       value: this.value,
       menubar: true,
-      imageUploadUrl: `${baseURL}/images`
+      imageUploadUrl: `${this.baseURL}/images`
     });
   },
 
   unmounted() {
     this.richtext?.destructor();
-  },
-  watch: {
-    initText(newVal) {
-      this.richtext?.setValue(newVal, "markdown");
-    }
   }
 };
 </script>
